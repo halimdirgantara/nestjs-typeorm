@@ -7,8 +7,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  async getHello(): Promise<User> {
+  async getHello(): Promise<User[]> {
     //const user = await this.appService.createUser("Rhea");
-    return this.appService.deleteUser(2);
+    return this.appService.getAll();
   }
 }

@@ -10,7 +10,9 @@ export class AppService {
   }
 
   getAll(): Promise<User[]> {
-    return this.usersRepository.find(); // Select * From User
+    return this.usersRepository.find({
+      relations: ['pets']
+    }); // Select * From User Join with pet
   }
 
   async getOneById(id: number): Promise<User> {
